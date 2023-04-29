@@ -1,0 +1,103 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- weather_chat.aiml -->
+    <!-- Asking about the weather today, default place: HCM-->
+    <category>
+        <pattern>WHAT IS THE WEATHER LIKE TODAY</pattern>
+        <template>
+            The weather today at %%Ho Chi Minh City%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
+        </template>
+    </category>
+    <!-- END -->
+
+    <!-- Asking weather in another city-->
+    <category>
+        <pattern>WHAT IS THE WEATHER LIKE IN *</pattern>
+        <template>
+            The weather today at %%<star/>%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
+        </template>
+    </category>
+    <!-- END -->
+
+    <!-- Asking the weather in the future time-->
+    <category>
+        <pattern>WHAT IS THE WEATHER LIKE IN NEXT *</pattern>
+        <template>
+            The weather in the next @@<star/>@@ will be $$wt_cond$$. Remember to bring $$item$$ when you go outside.
+        </template>
+    </category>
+    <!-- END -->
+
+    <!-- Asking about data sensors value -->
+    <category>
+        <pattern>WHAT IS THE CURRENT *</pattern>
+        <template>
+            The current !!<star/>!! is $$value$$
+        </template>
+    </category>
+    <!-- END -->
+
+    <!-- Asking about advice to go outside -->
+    <category>
+        <pattern>IS IT GOOD TO GO OUTSIDE THIS *</pattern>
+        <template>
+            The temperature will be $$temp$$ this @@<star/>@@, remember to use $$item$$.
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT OKAY TO GO OUTSIDE THIS *</pattern>
+        <template>
+            The temperature will be $$temp$$ this @@<star/>@@, remember to use $$item$$.
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS IT FINE TO GO OUTSIDE THIS *</pattern>
+        <template>
+            The temperature will be $$temp$$ this @@<star/>@@, remember to use $$item$$.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SHOULD I GO OUTSIDE NOW</pattern>
+        <template>
+            The temperature is $$temp$$, remember to use $$item$$.
+        </template>
+    </category>
+
+    <category>
+        <pattern>SHOULD I GO OUTSIDE AT *</pattern>
+        <template>
+            The temperature will be $$temp$$ at @@<star/>@@, remember to use $$item$$.
+        </template>
+    </category>
+    <!-- END -->
+
+    <!-- Asking about future weather -->
+    <category>
+        <pattern>WILL THE WEATHER BE * ON *</pattern>
+        <template>
+            The weather in Ho Chi Minh City will be $$wt_cond$$ on @@<star index="2"/>@@. Remember to carry $$item$$. 
+        </template>
+    </category>
+
+    <category>
+        <pattern>WILL IT BE * ON *</pattern>
+        <template>
+            The weather in Ho Chi Minh City will be $$wt_cond$$ on @@<star index="2"/>@@. Remember to carry $$item$$. 
+        </template>
+    </category>
+    <!-- END -->
+
+    <!-- catch any thing that bot doesn't understand -->
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <random>
+                <li>Sorry I did not have an answer for that</li>
+                <li>I am sorry, I didn't quite get that</li>
+                <li>I am sorry but on what earth does it exist</li>
+            </random>
+        </template>
+    </category>
+</aiml>
